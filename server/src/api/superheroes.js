@@ -42,7 +42,7 @@ router.post('/',async (req,res,next)=>{
     try{
         const value = await schema.validateAsync(req.body);
         const inserted = await superheroes.insert(value)
-        res.json(value)
+        res.json(inserted)
     }catch(error){
         next(error)
     }
